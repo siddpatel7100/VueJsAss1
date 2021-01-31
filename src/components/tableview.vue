@@ -1,32 +1,38 @@
 <template>
-  <div id="app">
-    <el-table
-        :data="tableData"
-        style="width: 100%">
-      <el-table-column
-          prop="date"
-          label="Date"
-          width="180">
-      </el-table-column>
-      <el-table-column
-          prop="name"
-          label="Name"
-          width="180">
-      </el-table-column>
-      <el-table-column
-          prop="address"
-          label="Address">
-      </el-table-column>
-    </el-table>
-  </div>
+  <el-table
+      :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
+      style="width: 100%">
+    <el-table-column
+        label="Date"
+        prop="date">
+    </el-table-column>
+    <el-table-column
+        label="Name"
+        prop="name">
+    </el-table-column>
+    <el-table-column
+        align="right">
+      <template slot-scope="scope">
+        <el-button
+            size="mini"
+            @click="handleEdit(scope.$index, scope.row)">+</el-button>
+        <el-button
+            size="mini"
+            @click="handleDelete(scope.$index, scope.row)">-</el-button>
+      </template>
+    </el-table-column>
+  </el-table>
 </template>
 
 <script>
 import Vue from 'vue';
-import {Table,TableColumn} from 'element-ui';
+import {Table,Button,TableColumn} from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'
+
 Vue.use(Table);
 Vue.use(TableColumn);
+Vue.use(Button);
+
 export default {
   data() {
     return {
@@ -48,7 +54,15 @@ export default {
         address: 'No. 189, Grove St, Los Angeles'
       }]
     }
-  }
+  },
+  methods: {
+    handleEdit(index, row) {
+      console.log(index, row);
+    },
+    handleDelete(index, row) {
+      console.log(index, row);
+    }
+  },
 }
 </script>
 <Style>
