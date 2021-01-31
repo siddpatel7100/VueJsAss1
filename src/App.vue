@@ -1,16 +1,17 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <tableview message="this is the data element passed"/>
+    <HelloWorld msg="this is your vue application"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import HelloWorld from './components/HelloWorld.vue';
+import tableview from "./components/tableview.vue";
 export default {
   name: 'App',
   components: {
+    tableview,
     HelloWorld
   }
 }
