@@ -1,8 +1,7 @@
 <template>
   <div>
-    <xyz message="this is the data element passed"/>
-    <HelloWorld msg="this is your vue application"/>
-    <el-button size="mini" type="danger">delete button</el-button>
+
+    <ProductGrid></ProductGrid>
   </div>
 </template>
 
@@ -11,12 +10,16 @@ import {Button} from 'element-ui'
 import Vue from 'vue'
 import HelloWorld from './components/HelloWorld.vue';
 import xyz from "./components/tableview.vue";
-Vue.use(Button)
+import ProductGrid from "@/components/ProductGrid";
+Vue.component(Button)
+Vue.component(HelloWorld)
+Vue.component(xyz)
 export default {
   name: 'App',
   components: {
-    xyz,
-    HelloWorld
+    ProductGrid,
+    // xyz,
+    // HelloWorld
   }
 }
 </script>
