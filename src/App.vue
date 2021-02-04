@@ -1,25 +1,30 @@
 <template>
-  <div>
+  <div id="toolBtns">
 
-    <ProductGrid></ProductGrid>
+    <hed></hed>
+
+
   </div>
+
 </template>
 
 <script>
 import {Button} from 'element-ui'
 import Vue from 'vue'
-import HelloWorld from './components/HelloWorld.vue';
-import xyz from "./components/tableview.vue";
-import ProductGrid from "@/components/ProductGrid";
+import header from "@/components/header";
+
+
+
 Vue.component(Button)
-Vue.component(HelloWorld)
-Vue.component(xyz)
+
+
+
 export default {
   name: 'App',
   components: {
-    ProductGrid,
-    // xyz,
-    // HelloWorld
+    "hed":header
+
+
   }
 }
 </script>
@@ -30,7 +35,22 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #502c44;
   margin-top: 60px;
 }
+#toolBtns a.router-link-exact-active{
+ background-color:green;
+}
+.el-table {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex: 1;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 100%;
+  font-size: 14px;
+  color: #606266;
+}
+
 </style>

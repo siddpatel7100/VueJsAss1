@@ -1,11 +1,20 @@
 <template>
   <div>
+
+
+    <h1>Hello World</h1>
+    <fot></fot>
   </div>
 </template>
 
 <script>
+import footer from "@/components/footer";
+
 export default {
   name: 'HelloWorld',
+  components: {
+    "fot":footer
+  },
   props: {
     msg: String
   }
@@ -14,8 +23,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+h1 {
+  margin-top:25px;
 }
 ul {
   list-style-type: none;

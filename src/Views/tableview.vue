@@ -1,4 +1,5 @@
 <template>
+  <div id="tab">
   <el-table
       :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
       style="width: 100%">
@@ -22,18 +23,27 @@
       </template>
     </el-table-column>
   </el-table>
+    <fot></fot>
+  <router-view></router-view>
+  </div>
 </template>
 
 <script>
 import Vue from 'vue';
 import {Table,Button,TableColumn} from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'
+import footer from "@/components/footer";
 
 Vue.use(Table);
 Vue.use(TableColumn);
 Vue.use(Button);
 
 export default {
+  name:'tableview',
+
+  components: {
+    "fot":footer
+  },
   data() {
     return {
       tableData: [{
@@ -65,6 +75,6 @@ export default {
   },
 }
 </script>
-<Style>
+<Style scoped>
 
 </Style>

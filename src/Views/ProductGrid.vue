@@ -39,14 +39,18 @@
       <p>Page 2 of 3</p>
       <a href="https://www.volusion.com"><p>Next &nbsp;<i class="fa fa-angle-right"></i></p></a>
     </div>
+    <fot></fot>
   </div>
+
 </template>
 
 <script>
-
+import footer from "@/components/footer";
 export default {
   name: "ProductGrid",
-  components: {},
+  components: {
+    "fot":footer
+  },
   methods: {
     handleCartCount(index) {
       console.log(index);
@@ -197,6 +201,7 @@ a {
   grid-gap: 15px;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr) );
   text-align: center;
+  margin-top: 60px;
 }
 
 #products div {
@@ -243,5 +248,14 @@ button:hover {
 
 .pagination p:nth-child(2n-3) {
   color: #65d6e4;
+}
+#container[data-v-6c4d8baa] {
+  padding-top: 20px;
+  margin-top: 50px;
+  color: white;
+  background-color: #292354;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
