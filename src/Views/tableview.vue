@@ -32,7 +32,7 @@
 import Vue from 'vue';
 import {Table,Button,TableColumn} from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'
-import footer from "@/components/footer";
+import foot from "@/components/footer";
 
 Vue.use(Table);
 Vue.use(TableColumn);
@@ -42,7 +42,7 @@ export default {
   name:'tableview',
 
   components: {
-    "fot":footer
+    "fot":foot
   },
   data() {
     return {

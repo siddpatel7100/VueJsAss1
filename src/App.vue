@@ -1,9 +1,7 @@
 <template>
   <div id="toolBtns">
 
-    <hed></hed>
-
-
+    <hedr></hedr>
   </div>
 
 </template>
@@ -11,7 +9,7 @@
 <script>
 import {Button} from 'element-ui'
 import Vue from 'vue'
-import header from "@/components/header";
+import hed from "@/components/header";
 
 
 
@@ -20,9 +18,9 @@ Vue.component(Button)
 
 
 export default {
-  name: 'App',
+
   components: {
-    "hed":header
+    "hedr":hed
 
 
   }

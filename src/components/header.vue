@@ -1,55 +1,48 @@
 <template>
-<header>
-  <mdb-container left>
-    <mdb-btn color="default" @click.native="login=true">Login<mdb-icon icon="eye" class="m1-1"/></mdb-btn>
-      <mdb-modal :show="login" @close="login=false">
-        <mdb-modal-header class="text-center">
-          <mdb-modal-title tag="h4" bold class="w-100">Login</mdb-modal-title>
-        </mdb-modal-header>
-        <mdb-modal-body class="mx-3 grey-text">
-          <mdb-input label="Your Email" icon="envelope" type="email" class="mb-5"/>
-          <mdb-input label="Your Password" icon="lock" type="password"/>
-        </mdb-modal-body>
-        <mdb-modal-footer center>
-          <mdb-btn @click.native="login=false">Login</mdb-btn>
-        </mdb-modal-footer>
-      </mdb-modal>
-  </mdb-container>
+<div class="hed">
   <b-nav>
 
     <b-nav-item ><router-link to="/tableview" >Table View</router-link></b-nav-item>
     <b-nav-item><router-link to="/HelloWorld" >Hello World</router-link></b-nav-item>
     <b-nav-item><router-link to="/ProductGrid" >Products</router-link></b-nav-item>
+    <div class="setcart">
+      <b-icon v-on:click="cart(items)" icon="cart" font-scale="3"></b-icon>
+
+    </div>
+    <span class="cart-count">{{count}}</span>
+
   </b-nav>
+
   <router-view></router-view>
-</header>
+</div>
 </template>
 
 <script>
-import{ mdbContainer,mdbBtn,mdbIcon,mdbModal,mdbModalHeader,mdbModalBody,mdbModalFooter,mdbInput,mdbModalTitle} from 'mdbvue';
 export default {
-name: "header",
+name: "hed",
   components:{
-    mdbContainer,
-    mdbBtn,
-    mdbModal,
-    mdbModalHeader,
-    mdbModalBody,
-    mdbModalFooter,
-    mdbInput,
-    mdbModalTitle,
-    mdbIcon
-  },
+     },
   data(){
     return{
       login:false
     }
+  },
+  methods:{
+  cart(items) {
+    return this.$router.push({name:"cart",params:items})
   }
+  },
+  computed:{
+  count(){
+    return this.$store.state.countItemCart;
+  }
+  },
+
 }
 </script>
 
 <style scoped>
-header{
+.hed{
   color: #65d6e4;
   background-color: yellow;
   text-align: center;
@@ -71,5 +64,21 @@ header{
 .nav-link {
   display: block;
   padding-top: 30px;
+}
+.b-icon.bi {
+  display: inline-block;
+  overflow: visible;
+  vertical-align: -0.15em;
+  margin-left: 250px;
+  margin-top: 20px;
+}
+.cart-count{
+margin-left: -15px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  background: white;
+  border-radius: 70%;
+
+ font-size: xx-large;
 }
 </style>
