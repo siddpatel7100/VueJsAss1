@@ -2,12 +2,12 @@
 
   <div id="container">
 
-      <div id="contacts--contact">
-        <p>Email</p>
-        <p>Phone No</p>
-      </div>
-
+    <div id="contacts--contact">
+      <p>Email</p>
+      <p>Phone No</p>
     </div>
+
+  </div>
 
 
 
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-name: "foot"
+  name: "foot"
 }
 </script>
 
