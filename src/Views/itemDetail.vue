@@ -1,5 +1,4 @@
 <template>
-  <div>
 <div class="d-flex item-details">
 
   <div class="item-details">
@@ -36,22 +35,17 @@
       </div>
     </div>
   </div>
-
   </div>
 
-</div>
-    <foot></foot>
+
   </div>
 </template>
 
 <script>
 
-import Foot from "@/components/footer";
+
 export default {
   name: "itemDetail",
-  components:{
-    Foot
-  },
   data() {
     return {
       details: this.$route.params

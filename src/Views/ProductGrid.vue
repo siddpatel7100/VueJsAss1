@@ -5,24 +5,24 @@
         <h4 class="my-4 fw-600 d-blue">Top Rated</h4>
         <div class="row">
 
-        <div v-on:click="itemDetail(items)" v-for="items in productDetails" :key="items.id" class="col-md-4 pointer">
-          <img :src="items.url" width="300px" height="300px" style="border-radius: 15px"/>
-          <h5 class="fw-600 black">{{items.name}}</h5>
+          <div v-on:click="itemDetail(items)" v-for="items in productDetails" :key="items.id" class="col-md-4 pointer">
+            <img :src="items.url" width="300px" height="300px" style="border-radius: 15px"/>
+            <h5 class="fw-600 black">{{items.name}}</h5>
 
-          <div>
-            <a  >
-              <button>Add to Cart</button>
-            </a>
+            <div>
+              <a  >
+                <button>Add to Cart</button>
+              </a>
+            </div>
           </div>
         </div>
-        </div>
       </div>
 
 
 
-      </div>
-    <fot></fot>
     </div>
+    <fot></fot>
+  </div>
 
 
 
@@ -39,7 +39,7 @@ export default {
 
   methods: {
     itemDetail(item){
-     return this.$router.push({name:"itemDetail",params:item})
+      return this.$router.push({name:"itemDetail",params:item})
     }
   },
   computed: {
