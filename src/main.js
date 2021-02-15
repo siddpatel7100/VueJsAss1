@@ -14,9 +14,10 @@ import itemDetail from "@/Views/itemDetail";
 import cart from "@/Views/cart";
 import summary from "@/Views/summary";
 import emptyCart from "@/Views/emptyCart";
+import checkout from "@/Views/checkout";
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
-
+import VueSimpleAlert from "vue-simple-alert";
 import {store} from "@/store/store";
 import {BootstrapVueIcons} from 'bootstrap-vue'
 
@@ -27,7 +28,8 @@ const routes = [
     {path: "/itemDetail", component: itemDetail, name: "itemDetail"},
     {path: "/cart", component: cart, name: "cart"},
     {path: '/summary', component: summary},
-    {path: '/emptyCart', component: emptyCart}
+    {path: '/emptyCart', component: emptyCart},
+    {path: '/checkout',component: checkout, name: 'checkout'}
 
 ]
 const router = new VueRouter({
@@ -39,6 +41,7 @@ Vue.config.productionTip = false
 Vue.use(VueRouter);
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
+Vue.use(VueSimpleAlert);
 new Vue({
 
     router: router,

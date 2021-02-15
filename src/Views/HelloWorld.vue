@@ -1,8 +1,11 @@
 <template>
   <div>
 
-
-    <h1>Hello World</h1>
+<h2>Edit Page</h2>
+    <input type="text" v-model="uname" ><br>
+    <input type="text" v-model="email"><br>
+    <input type="text" v-model = "password"><br>
+    <button type="button" v-on:click="updateprofile" >Update</button>
     <fot></fot>
   </div>
 </template>
@@ -12,11 +15,28 @@ import footer from "@/components/footer";
 
 export default {
   name: 'HelloWorld',
-  components: {
-    "fot":footer
+  data() {
+    return {
+      email: '',
+      uname: '',
+      password: '',
+    }
   },
-  props: {
-    msg: String
+  mounted() {
+this.uname =localStorage.username
+    this.email = localStorage.email
+    this.password = localStorage.password
+  },
+  components: {
+    "fot": footer
+  },
+
+  methods: {
+    updateprofile() {
+      localStorage.username = this.uname
+      localStorage.email = this.email
+      localStorage.password = this.password
+    }
   }
 }
 </script>

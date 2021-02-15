@@ -1,7 +1,7 @@
 <template>
   <header>
     <mdb-container>
-      <mdb-btn color="default" rounded @click.native="cascading=true">Login/Register
+      <mdb-btn color="default"  rounded @click.native="cascading=true">Login/Register
         <mdb-icon class="ml-1" icon="eye"/>
       </mdb-btn>
       <mdb-modal :show="cascading" cascade tabs @close="cascading=false">
@@ -10,10 +10,10 @@
           <mdb-tab-item :active="tabs==2" @click.native.prevent="tabs=2">Register</mdb-tab-item>
         </mdb-tab>
         <mdb-modal-body v-if="tabs==1" class="mx-3">
-          <mdb-input class="mb-5" label="Your Email" type="email"/>
-          <mdb-input label="Your Password" type="password"/>
+          <mdb-input class="mb-5" label="Your Email" v-model="valemail" type="email"/>
+          <mdb-input label="Your Password" type="password" v-model="valpass"/>
           <div class="mt-2 text-center">
-            <mdb-btn color="info">Log In
+            <mdb-btn color="info" v-on:click="valuser">Log In
               <mdb-icon class="ml-1" icon="sign-in-alt"/>
             </mdb-btn>
           </div>
@@ -25,12 +25,12 @@
           <mdb-btn class="ml-auto" outline="info" @click.native="cascading=false">Close</mdb-btn>
         </mdb-modal-footer>
         <mdb-modal-body v-if="tabs==2" class="mx-3">
-          <mdb-input class="mb-5" label="Your Email" type="email"/>
-          <mdb-input class="mb-5" label="Your Username"/>
-          <mdb-input class="mb-5" label="Your Password" type="password"/>
-          <mdb-input label="Repeat Password" type="password"/>
+          <mdb-input class="mb-5" label="Your Email" v-model="email" type="email"/>
+          <mdb-input class="mb-5" label="Your Username" v-model="username"/>
+          <mdb-input class="mb-5" label="Your Password" type="password" v-model="password"/>
+          <mdb-input label="Repeat Password" type="password" v-model="password1"/>
           <div class="mt-2 text-center">
-            <mdb-btn color="info">Sign Up
+            <mdb-btn color="info" v-on:click="signup">Sign Up
               <mdb-icon class="ml-1" icon="sign-in-alt"/>
             </mdb-btn>
           </div>
@@ -49,7 +49,7 @@
         <router-link to="/tableview">Table View</router-link>
       </b-nav-item>
       <b-nav-item>
-        <router-link to="/HelloWorld">Hello World</router-link>
+        <router-link to="/HelloWorld">Edit Profile</router-link>
       </b-nav-item>
       <b-nav-item>
         <router-link to="/ProductGrid">Products</router-link>
@@ -59,6 +59,9 @@
       </div>
       <span class="cart-count">{{ count }}</span>
     </b-nav>
+    <div class="setusername">
+      <h3>Hello{{sessname}}</h3>
+    </div>
     <router-view></router-view>
   </header>
 </template>
@@ -93,12 +96,45 @@ export default {
     return {
       cascading:false,
       tabs:1,
-      login: false
+      login: false,
+      email:'',
+      username:'',
+      password:'',
+      password1:"",
+      sessname:"",
+      valpass:"",
+      valemail:""
+
     }
   },
+
   methods: {
     cart(items) {
       return this.$router.push({name: "cart", params: items})
+    },
+    signup(){
+
+      localStorage.email = this.email;
+      localStorage.username = this.username;
+      localStorage.password = this.password;
+      this.email = '';
+      this.username = '';
+      this.password = '';
+      this.password1=''
+
+    },
+    valuser(){
+     if( this.valemail === localStorage.getItem("email") && this.valpass === localStorage.getItem("password")){
+
+       this.$alert("Hello Vue Simple Alert.");
+
+       this.sessname = localStorage.getItem("email");
+       this.cascading=false
+       return this.sessname
+     }else {
+       this.$alert("Wrong Pass and Username");
+     }
+
     }
   },
   computed: {
@@ -117,7 +153,9 @@ header {
   text-align: center;
   height: 100px;
 }
-
+.setusername{
+  float: right;
+}
 .nav {
   display: flex;
   flex-wrap: wrap-reverse;

@@ -77,19 +77,7 @@ export default {
       return this.$store.dispatch("removeItem", items)
     },
     checkOut(){
-     this.$swal({
-       position: 'top-end',
-       icon: 'success',
-       height: 1000,
-       width: 400,
-      background:"#0CC5CA  ",
-       textAlign:"center",
-       paddingLeft:50,
-       title: 'Your work has been saved',
-       showConfirmButton: false,
-       timer: 5000
-      })
-      window.location.href='/cart.vue'
+      this.$router.push("./checkout")
     }
   }
 }
