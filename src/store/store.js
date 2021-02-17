@@ -7,36 +7,62 @@ import img2 from '@/assets/img3.jpg'
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
-state:{
-    productDetails: [
-        {
-            id:1,
-            name: 'Canvas Belt',
-            base: 25,
-            price: 18,
-            url: img,
+    state:{
+        productDetails: [
+            {
+                id:1,
+                name: 'Canvas Belt',
+                base: 25,
+                price: 18,
+                url: img,
+                description:'lorem ipsum dolar sit amet lorem ipsum dolor sit amet',
+                sku: 'canvas-belt'
+            },
+            {
+                id:2,
+                name: 'Radiator Sunglasses',
+                price: 180,
+                sale: null,
+                url: img1,
+                description:'lorem ipsum dolar sit amet lorem ipsum dolor sit amet',
+                sku: 'radiator-sunglasses'
+            },
+            {
+                id: 3,
+                name: 'Two-Toned Frames',
+                price: 95,
+                url: img2,
+                description:'lorem ipsum dolar sit amet lorem ipsum dolor sit amet',
+                sku: 'two-toned-frames'
+            },
+            {
+                id:4,
+                name: 'Two-Toned Frames',
+                price: 95,
+                url: img2,
+                description:'lorem ipsum dolar sit amet lorem ipsum dolor sit amet',
+                sku: 'two-toned-frames'
+            },
+            {
+                id:5,
+                name: 'Two-Toned Frames',
+                price: 95,
+                url: img2,
+                description:'lorem ipsum dolar sit amet lorem ipsum dolor sit amet',
+                sku: 'two-toned-frames'
+            },
+            {
+                id:6,
+                name: 'Two-Toned Frames',
+                price: 95,
+                url: img2,
+                description:'lorem ipsum dolar sit amet lorem ipsum dolor sit amet',
+                sku: 'two-toned-frames'
+            }
 
-            sku: 'canvas-belt'
-        },
-        {
-            id:2,
-            name: 'Radiator Sunglasses',
-            price: 180,
-            sale: null,
-            url: img1,
-
-            sku: 'radiator-sunglasses'
-        },
-        {
-            id:3,
-            name: 'Two-Toned Frames',
-            price: 95,
-            url: img2,
-            sku: 'two-toned-frames'
-        }
-    ],
-    countItemCart:0,
-    cartItems:[]
+        ],
+        countItemCart:0,
+        cartItems:[]
     },
     mutations: {
         addToCart(state, payload) {
@@ -76,14 +102,14 @@ state:{
             }
         }
 
-        },
+    },
 
     actions:{
-    addToCart:(context,payload)=>{
-        context.commit("addToCart",payload)
-    },
+        addToCart:(context,payload)=>{
+            context.commit("addToCart",payload)
+        },
         removeItem:(context,payload)=>{
-        context.commit("removeItem",payload)
-}
+            context.commit("removeItem",payload)
+        }
     }
 })

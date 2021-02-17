@@ -1,45 +1,62 @@
 <template>
+  <div class="container-fluid pt-0 footerContainer  bg-dark">
 
-  <div id="container">
+      <b-row>
+        <b-col cols="1">
 
-    <div id="contacts--contact">
-      <p>Email</p>
-      <p>Phone No</p>
-    </div>
+        </b-col>
+        <b-col cols="5">
+          <b-row>
+            <b-col>
+              <ul class="footerright">
+                <li>
+                  <a href="">Link 4</a>
+                </li>
+                <li>
+                  <a href="">Link 5</a>
+                </li>
+                <li>
+                  <a href="">link 6</a>
+                </li>
+              </ul>
+            </b-col>
+            <b-col>
 
+            </b-col>
+            <b-col>
+
+            </b-col>
+            <b-col>
+
+            </b-col>
+          </b-row>
+        </b-col>
+        <b-col cols="5">
+
+        </b-col>
+        <b-col cols="1">
+
+        </b-col>
+      </b-row>
   </div>
-
-
-
 </template>
 
 <script>
 export default {
-  name: "foot"
+  name: "CustomFooter"
 }
 </script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-body{
-  display:flex;
-  background-color:#F0F8FF;
-  height:95vh;
-  justify-content:center;
-  align-items:flex-end;
-  font-family:Open Sans;
+ul.footerContainer{
+  margin-right: 150px;
+  margin-top: 10px;
 }
 
-#container{
-  padding-top:20px;
-  margin-top:700px;
-
-  color:white;
-  background-color:#292354;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+.footerContainer{
+  height: 10em;
 }
 
 #contacts--contact{

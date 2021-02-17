@@ -5,11 +5,9 @@
       <div v-if="totalPrice !== 0" class="container mb-5">
         <h4 class="my-4 my-cart">My Cart</h4>
         <div class="d-flex my-3" style="justify-content: space-between">
-
           <div class="container mb-5">
             <h2>My cart</h2>
             <h4>Summary</h4>
-
             <div class="own">
               <sum v-bind:totalPrice="totalPrice"></sum>
             </div>

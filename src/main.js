@@ -39,7 +39,6 @@ Vue.use(VueSweetalert2);
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 Vue.use(VueRouter);
-Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 Vue.use(VueSimpleAlert);
 new Vue({
