@@ -3,11 +3,9 @@
   <div class="d-flex cart-outer-div">
     <div class="cart-body">
       <div v-if="totalPrice !== 0" class="container mb-5">
-        <h4 class="my-4 my-cart">My Cart</h4>
         <div class="d-flex my-3" style="justify-content: space-between">
           <div class="container mb-5">
             <h2>My cart</h2>
-            <h4>Summary</h4>
             <div class="own">
               <sum v-bind:totalPrice="totalPrice"></sum>
             </div>
@@ -38,7 +36,6 @@
       </div>
       <EmptyCart v-else></EmptyCart>
     </div>
-    <foot></foot>
   </div>
 </template>
 <script>
@@ -46,12 +43,10 @@
 import summ from "@/Views/summary";
 
 import EmptyCart from "@/Views/emptyCart";
-import Foot from "@/components/footer";
 
 export default {
   name: "cart",
   components: {
-    Foot,
     EmptyCart,
     "sum": summ
   },
@@ -84,7 +79,6 @@ export default {
 <style scoped>
 .cart-outer-div {
   flex-direction: column;
-  height: 100vh;
 }
 
 .cart-body {

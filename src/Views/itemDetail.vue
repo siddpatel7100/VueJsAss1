@@ -1,41 +1,38 @@
 <template>
-<div class="d-flex item-details">
+  <div class="d-flex item-details">
 
-  <div class="item-details">
-  <div class="container mb-5">
-    <h4 class="my-4 fw-600">Add Item to Cart </h4>
-    <div class="row">
-      <div class="col.md-4" style="cursor: pointer">
-        <img :src="details.url" width="300px" height="300px" style="border-radius: 50%"/>
-      </div>
-      <div class="col-md-4" style="cursor: pointer">
-        <table>
-          <tr>
-            <td><h4 style="text-align: left">Name:</h4></td>
-            <td><h4 style="text-align: center;color: darkorange">{{details.name}}</h4></td>
+    <div class="item-details">
+      <div class="container mb-5">
+        <h4 class="my-4 fw-600"></h4>
+        <div class="row">
+          <div class="col.md-4" style="cursor: pointer">
+            <img :src="details.url" width="300px" height="300px" style="border-radius: 50%"/>
+          </div>
+          <div class="col-md-4" style="cursor: pointer">
+            <table>
+              <tr>
+                <td><h4 style="text-align: left">Name:</h4></td>
+                <td><h4 style="text-align: center;color: darkorange">{{details.name}}</h4></td>
 
-          </tr>
-          <tr>
-            <td><h4 style="text-align: left">Price:</h4></td>
-            <td><h4 style="text-align: center;color: darkorange">{{details.price}}</h4></td>
+              </tr>
+              <tr>
+                <td><h4 style="text-align: left">Price:</h4></td>
+                <td><h4 style="text-align: center;color: darkorange">{{details.price}}</h4></td>
 
-          </tr>
-    <tr>
-      <td ><h4 style="text-align: left;">Description:</h4></td>
-      <td><h4 style="text-align: center;color: darkorange">{{details.sku}}</h4></td>
-
-    </tr>
-        </table>
-        <div class="line">
-
-          <b-button v-on:click="addToCart" variant="danger">Add to Cart</b-button>
-          <b-button v-on:click="removeItem" variant="success">Remove from Cart</b-button>
-          <b-button v-on:click="goToCart" variant="info">View Cart</b-button>
+              </tr>
+              <tr>
+                <td ><h4 style="text-align: left;">Description:</h4></td>
+                <td><h4 style="text-align: center;color: darkorange">{{details.sku}}</h4></td>
+              </tr>
+              <tr>
+                  <b-button style="width: 300px"  v-on:click="addToCart" variant="primary">Add to Cart</b-button>
+                  <b-button style="width: 300px" v-on:click="goToCart" variant="info">View Cart</b-button>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
 
 
   </div>
@@ -56,10 +53,10 @@ export default {
       this.$router.push("./cart")
     },
     addToCart(){
-       this.$store.dispatch("addToCart",this.details)
+      this.$store.dispatch("addToCart",this.details)
     },
     removeItem(){
-          this.$store.dispatch("removeItem",this.details)
+      this.$store.dispatch("removeItem",this.details)
     }
   },
   created() {

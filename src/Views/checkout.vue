@@ -1,7 +1,7 @@
 <template>
   <mdb-card>
-    <mdb-card-header class="pt-4 amy-crisp-gradient">
-      <mdb-card-title><strong>Shipping Address</strong></mdb-card-title>
+    <mdb-card-header class="pt-4 bg-dark">
+      <b-card-title title="Shipping Address" class="text-light"></b-card-title>
     </mdb-card-header>
     <!-- Material input -->
     <form>
@@ -30,10 +30,10 @@
       <!-- Default input -->
       <!-- Grid row -->
       <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputAddress2">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-      </div>
+        <div class="form-group col-md-6">
+          <label for="inputAddress2">Address 2</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div>
         <div class="form-group col-md-6">
           <label for="inputPhone">Phone Number</label><label class="error">{{eml4}}</label>
           <input type="text" class="form-control" id="inputPhone" v-model="phone" placeholder="Your Phone Number">
@@ -56,51 +56,62 @@
     </form>
     <hr>
 
-    <mdb-card-header class="pt-4 amy-crisp-gradient">
-      <mdb-card-title><strong>Payment Method</strong></mdb-card-title>
+    <mdb-card-header class="pt-4 bg-dark">
+      <b-card-title title="Payment Method" class="text-light"></b-card-title>
     </mdb-card-header>
 
     <!-- Group of material radios - option 1 -->
     <div class="form-check" style="margin-left: 1%;margin-top: 2%;margin-bottom: 2%">
-      <input type="radio" style="margin-left: -51%; transform: scale(2);" class="form-check-input"  id="materialGroupExample1" name="groupOfMaterialRadios">
-      <label class="form-check-label" style="margin-left: 1%" for="materialGroupExample1">Cash On Delivery(COD)</label>
+      <b-row>
+        <b-col cols="1" style="padding: 0px;align-content: center">
+          <input type="radio" style=" transform: scale(2);"   id="materialGroupExample1" name="groupOfMaterialRadios">
+        </b-col>
+        <b-col cols="11">
+          <label class="form-check-label" style="" for="materialGroupExample1">Cash On Delivery(COD)</label>
+        </b-col>
+      </b-row>
     </div>
 
     <!-- Group of material radios - option 2 -->
     <div class="form-check" style="margin-left: 1%;margin-bottom: 2%;margin-top: 2%;">
-      <input type="radio" style="margin-left: -51%; transform: scale(2);" class="form-check-input" id="materialGroupExample2" name="groupOfMaterialRadios" checked>
-      <label class="form-check-label" style="margin-left: 1%" for="materialGroupExample2">Debit/Credit</label>
+      <b-row>
+        <b-col cols="1" style="padding: 0px;align-content: center">
+          <input type="radio" style=" transform: scale(2);" id="materialGroupExample2" name="groupOfMaterialRadios" checked>
+        </b-col>
+        <b-col cols="11">
+          <label class="form-check-label" style="" for="materialGroupExample2">Debit/Credit</label>
+        </b-col>
+      </b-row>
+
+
     </div>
 
     <!-- Group of material radios - option 3 -->
     <div class="form-check" style="margin-left: 1%;margin-bottom: 2%;margin-top: 2%;">
-      <input type="radio" style="margin-left: -51%; transform: scale(2);" class="form-check-input" id="materialGroupExample3" name="groupOfMaterialRadios">
-      <label class="form-check-label" style="margin-left: 1%" for="materialGroupExample3">Net Banking</label>
+
+      <b-row>
+        <b-col cols="1" style="padding: 0px;align-content: center">
+          <input type="radio" style=" transform: scale(2);" id="materialGroupExample3" name="groupOfMaterialRadios">
+        </b-col>
+        <b-col cols="11">
+          <label class="form-check-label" style="" for="materialGroupExample3">Net Banking</label>
+        </b-col>
+      </b-row>
+
+
     </div>
 
     <mdb-card-footer class="white d-flex justify-content-end">
-      <mdb-btn gradient="amy-crisp" class="black-text" icon="paper-plane" v-on:click="placeorder" rounded>Place Order</mdb-btn>
+      <mdb-btn  class="btn-dark" icon="paper-plane" v-on:click="placeorder" rounded>Place Order</mdb-btn>
     </mdb-card-footer>
 
   </mdb-card>
 </template>
 
 <script>
-import {
-  mdbBtn,
-  mdbCard,
-  mdbCardHeader,
-  mdbCardTitle,
-  mdbCardFooter,
-   } from 'mdbvue';
 export default {
-name: "checkout",
+  name: "checkout",
   components: {
-    mdbBtn,
-    mdbCard,
-    mdbCardHeader,
-    mdbCardTitle,
-    mdbCardFooter,
   },
   data() {
     return {
@@ -163,8 +174,8 @@ name: "checkout",
       } else {
         this.eml6 = ''
       }
-        if(this.eml1 == ''&& this.eml2 =='' && this.eml3 =="" && this.eml4 =='' && this.eml5 =='' &&  this.eml6 =='')
-        {
+      if(this.eml1 == ''&& this.eml2 =='' && this.eml3 =="" && this.eml4 =='' && this.eml5 =='' &&  this.eml6 =='')
+      {
         this.$swal({
           position: 'top-end',
           icon: 'success',
@@ -201,7 +212,7 @@ name: "checkout",
 }
 
 .form-col{
-margin-top: -20%;
+  margin-top: -20%;
   margin-left: 45%;
 }
 .card-header:first-child {
@@ -210,7 +221,7 @@ margin-top: -20%;
   margin-bottom: 2%;
 }
 label {
-display: initial;
+  display: initial;
   float: left;
   margin-bottom: 0.5rem;
 }
