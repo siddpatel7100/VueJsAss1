@@ -224,9 +224,9 @@ export default {
         }
         return valid
       }else {
-        const valid = this.$refs.loginForm.checkValidity()
+        const valid = this.$refs.registerForm.checkValidity()
         if (this.registerEmail == ""){
-          this.registerEmail = valid;
+          this.registerEmailState = valid;
         }
         if (this.registerPassword == ""){
           this.registerPasswordState = valid;
@@ -247,7 +247,7 @@ export default {
 
       localStorage.email = this.registerEmail;
       localStorage.username = this.username;
-      localStorage.password = this.this.registerPassword;
+      localStorage.password = this.registerPassword;
       this.email = '';
       this.username = '';
       this.password = '';
